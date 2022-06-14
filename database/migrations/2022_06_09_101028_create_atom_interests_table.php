@@ -17,12 +17,12 @@ class CreateAtomInterestsTable extends Migration
             $table->id();
             $table->string('investment_category');
             $table->string('firstname');
-            $table->string('secondname');
+            $table->string('secondname')->nullable();
             $table->string('thirdname');
             $table->string('email')->unique;
             $table->integer('phone');
             $table->date('dob');
-            $table->string('gender');
+            $table->string('gender')->nullable();;
             $table->string('country');
             $table->bigInteger('price');
             $table->char('note');

@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\WelcomeMail;
+use App\Mail\AttachmentMail;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\EmailsController;
 
 
 /*
@@ -34,6 +37,19 @@ Route::post('/interest/store', [App\Http\Controllers\InterestPageController::cla
 // Route::get('/about', [App\Http\Controllers\frontPageController::class, 'about']);
 // Route::get('/about', [App\Http\Controllers\frontPageController::class, 'about']);
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::route([
+//     'verify' => true
+// ]);
+
+
+
+//route for mailing
+// Route::get('/email', function(){
+//     Mail::to('mnanjwan@gmail.com')->send(new WelcomeMail());
+//     return new WelcomeMail();
+// });
+
+
+//Route::get('/email', [EmailsController::class, 'email']);
+

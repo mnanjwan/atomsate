@@ -1,7 +1,7 @@
         @extends("layouts.master")
 
         @section("title")
-           ATOM
+            About | ATOM
         @endsection
 
         @section("content")

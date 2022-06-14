@@ -6,6 +6,8 @@
 
             @section('content')
 
+            @include('sweetalert::alert')
+
 			<!-- CONTACTS-2
 			============================================= -->
 			<section id="contacts-2" class="bg-snow wide-50 inner-page-hero contacts-section division">

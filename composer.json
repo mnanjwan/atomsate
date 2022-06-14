@@ -13,7 +13,10 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "livewire/livewire": "^2.10",
-        "mckenziearts/laravel-notify": "^2.3"
+        "mckenziearts/laravel-notify": "^2.3",
+        "realrashid/sweet-alert": "^5.1",
+        "symfony/http-client": "^5.4",
+        "symfony/mailgun-mailer": "^5.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

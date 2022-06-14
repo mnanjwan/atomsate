@@ -5,6 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
+use Mail;
+//use App\Mail\ContactMail;
+use App\Mail\WelcomeMail;
+
 class AtomInterest extends Model
 {
     use HasFactory;
@@ -25,6 +30,8 @@ class AtomInterest extends Model
         'interest_id',
 
     ];
+
+
 
 
 }

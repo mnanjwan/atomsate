@@ -2,9 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeMail;
+
 use Illuminate\Http\Request;
 use App\Models\AtomInterest;
 use DB;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Mail;
+use RealRashid\SweetAlert\Facades\Alert;
+
+
+
 
 class InterestPageController extends Controller
 {
@@ -52,18 +61,17 @@ class InterestPageController extends Controller
             $interest->note = $request->note;
             $interest->interest_id = '1234567';
 
+
             if($interest->save()){
-
-                    // return view('');
-
-                    session()->flash('Post successfully updated.');
-                    notify()->flash('Regstration successfully updated!');
-                    //return view('front.index');
-                    return redirect()->back();
+                Mail::to($request['email'],)->send(new WelcomeMail($request->firstname));
+                Mail::to('support@atomsate.com');
 
 
+                    // session()->flash('Post successfully updated.');
+                    // notify()->success('Regstration successfully updated!');
                     //notify()->success('Hi '.$request->name.', Thanks for registring We will get an email feedback from our support team');
-
+                    Alert::success('success', 'Regstration successfully!');
+                    return redirect()->back();
 
             }
 
